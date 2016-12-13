@@ -1,0 +1,7 @@
+.right {
+    float: right;
+}
+
+#login input:type[text], #login input:type[password] {
+    width: 75%;
+}
