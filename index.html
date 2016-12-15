@@ -12,37 +12,78 @@
 
     <body>
 
-        <nav class="navbar navbar-inverse">
+        <nav id="navbar" class="navbar navbar-inverse">
             <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">expla.in</a>
-                </div>
-                <div id="navbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#login" data-toggle="modal" data-target="#login_window">Log-in</a></li>
-                    </ul>
-                </div>
-                <form class="navbar-form navbar-right">
-                    <input type="text" class="form-control" placeholder="Search...">
-                </form>
-            </div>
-        </nav>
+                <div class="nav navbar-nav">
+                    <a class="navbar-brand" href="#">untitled</a>
+                </div><!-- /nav -->
+            </div><!-- /container-fluid -->
+        </nav> <!-- /navbar -->
         
         <div class="container-fluid">
+            
             <div class="row">
-                <div class="sidebar col-md-2" id="sidebar">
-                    <ul class="nav nav-sidebar">
-                        <li><a href="#">link</a></li>
-                        <li><a href="#">link</a></li>
-                        <li><a href="#">link</a></li>
-                    </ul>
-                </div>
-                <div class="main col-md-10">
-                    <p>[content]</p>
-                </div>
-            </div>
-        </div>
+                
+                <div id="sidebar-left" class="col-md-3">
+                    <div class="sidebar-nav-fixed affix">
+                        <div class="well">
+                            <div id="userprofile">
+                                <p><?php echo $userUsername; ?></p>
+                                <ul class="nav">
+                                    <li>Posts: <?php echo $userUsername; ?></li>
+                                    <li>Likes: <?php echo $userUsername; ?></li>
+                                    <li>Followers: <?php echo $userUsername; ?></li>
+                                    <li>Following: <?php echo $userUsername; ?></li>
+                                </ul>
+                            </div><!-- /userprofile -->
+                            <div id="trendingwords">
+                                <h3>Trending words:</h3>
+                                <ol>
+                                    <li><?php echo $word1; ?></li>
+                                    <li><?php echo $word2; ?></li>
+                                    <li><?php echo $word3; ?></li>
+                                    <li><?php echo $word4; ?></li>
+                                    <li><?php echo $word5; ?></li>
+                                    <li><?php echo $word6; ?></li>
+                                    <li><?php echo $word7; ?></li>
+                                    <li><?php echo $word8; ?></li>
+                                    <li><?php echo $word9; ?></li>
+                                    <li><?php echo $word10; ?></li>
+                                </ol>
+                            </div><!-- /trendingwords -->
+                        </div><!-- /well -->
+                    </div><!-- /sidebar-nav-fixed -->
+                </div><!-- /sidebar-left-->
+                
+                <div id="content" class="col-md-6">
+                    <div class="jumbotron">
+                    </div><!-- /jumbotron -->
+                </div><!--/content-->
+                
+                <div id="sidebar-right" class="col-md-3">
+                    <div class="sidebar-nav-fixed pull-right affix">
+                        <div class="well">
+                            <ul class="nav ">
+                            <div id="previewprofile">
+                                <p><?php echo $previewUsername; ?></p>
+                                <ul class="nav">
+                                    <li>Posts: <?php echo $previewUsername; ?></li>
+                                    <li>Likes: <?php echo $previewUsername; ?></li>
+                                    <li>Followers: <?php echo $previewUsername; ?></li>
+                                    <li>Following: <?php echo $previewUsername; ?></li>
+                                </ul>
+                            </div><!-- /previewprofile -->
+                            <div id="previewposts">
+                                <h3>Posts:</h3>
+                            </div><!-- /previewprofile -->
+                            </ul>
+                        </div><!-- /well -->
+                    </div><!-- /sidebar-nav-fixed -->
+                </div><!-- /sidebar-right-->
+                
+            </div><!-- /row-->
+            
+        </div><!--/container-->
         
         <!-- LOGIN MODAL WINDOW -->
         <div id="login_window" class="modal fade">

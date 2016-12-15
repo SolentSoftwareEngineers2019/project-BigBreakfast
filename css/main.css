@@ -1,7 +1,16 @@
-.right {
-    float: right;
+#navbar {
+    border-radius: 0;
+    background-color: #e63e3e;
+    border-color: #ba3f3f;
+    color: #000000;
+    margin-bottom: 0;
 }
 
-#login input:type[text], #login input:type[password] {
-    width: 75%;
+#navbar a {
+    color: #000000;
 }
+
+.sidebar-nav-fixed {
+	width: 20%;
+}
+
