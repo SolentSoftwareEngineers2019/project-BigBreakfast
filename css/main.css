@@ -1,3 +1,16 @@
+body {
+    overflow: scroll;
+}
+
+#wrapper {
+    overflow: scroll;
+    position: absolute;
+}
+
+#jumbotron {
+    position: relative;
+}
+
 #navbar {
     background-color: #dd0000;
     border-bottom: 1px solid #bb0000;

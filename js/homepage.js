@@ -1,9 +1,12 @@
 /*jslint browser: true*/
 /*global $, jQuery, alert*/
 
+var smallScreenSize = 750;
+var mediumScreenSize = 1000;
+
 $(window).on('load', function () {
     'use strict';
-    if ($(window).width() < 1000) {
+    if ($(window).width() < mediumScreenSize) {
         if ($('[id="sidebar-left-wrapper"]').attr("aria-expanded") === "true") {
             $('[id="sidebar-left-wrapper"]').animate({'left': '-=250px'}, 0);
             $('[id="sidebar-left-wrapper"]').attr("aria-expanded", "false");
@@ -16,7 +19,7 @@ $(window).on('load', function () {
             $('[id="sidebar-right-wrapper"]').attr("aria-expanded", "false");
         }
     }
-    if ($(window).width() >= 1000) {
+    if ($(window).width() >= mediumScreenSize) {
         if ($('[id="sidebar-left-wrapper"]').attr("aria-expanded") === "false") {
             $('[id="sidebar-left-wrapper"]').animate({'left': '250px'});
             $('[id="sidebar-left-wrapper"]').attr("aria-expanded", "true");
@@ -33,7 +36,7 @@ $(window).on('load', function () {
 
 $(window).on('resize', function () {
     'use strict';
-    if ($(window).width() < 1000) {
+    if ($(window).width() < mediumScreenSize) {
         if ($('[id="sidebar-left-wrapper"]').attr("aria-expanded") === "true") {
             $('[id="sidebar-left-wrapper"]').animate({'left': '-=250px'}, 250);
             $('[id="sidebar-left-wrapper"]').attr("aria-expanded", "false");
@@ -46,7 +49,7 @@ $(window).on('resize', function () {
             $('[id="sidebar-right-wrapper"]').attr("aria-expanded", "false");
         }
     }
-    if ($(window).width() >= 1000) {
+    if ($(window).width() >= mediumScreenSize) {
         if ($('[id="sidebar-left-wrapper"]').attr("aria-expanded") === "false") {
             $('[id="sidebar-left-wrapper"]').animate({'left': '250px'});
             $('[id="sidebar-left-wrapper"]').attr("aria-expanded", "true");
@@ -69,14 +72,14 @@ $('[data-toggle="collapse-slide-left"]').on('click', function () {
     if ($navMenuCont.attr("aria-expanded") === "true") {
         $navMenuCont.animate({'left': '-=250px'}, 250);
         $navMenuCont.attr("aria-expanded", "false");
-        if ($('[id="wrapper"]').attr("expanded-left") === "false" && $(window).width() < 1000) {
+        if ($('[id="wrapper"]').attr("expanded-left") === "false" && $(window).width() < mediumScreenSize && $(window).width() > smallScreenSize) {
             $('[id="wrapper"]').animate({'padding-left': '0px'}, 250);
             $('[id="wrapper"]').attr("expanded-left", "true");
         }
     } else {
         $navMenuCont.animate({'left': '+=250px'}, 250);
         $navMenuCont.attr("aria-expanded", "true");
-        if ($('[id="wrapper"]').attr("expanded-left") === "true") {
+        if ($('[id="wrapper"]').attr("expanded-left") === "true" && $(window).width() < mediumScreenSize && $(window).width() > smallScreenSize) {
             $('[id="wrapper"]').animate({'padding-left': '250px'}, 250);
             $('[id="wrapper"]').attr("expanded-left", "false");
         }
@@ -89,13 +92,13 @@ $('[data-toggle="collapse-slide-right"]').on('click', function () {
     var $navMenuCont;
     $navMenuCont = $($(this).data('target'));
     if ($navMenuCont.attr("aria-expanded") === "true") {
-        if ($(window).width() < 1000) {
+        if ($(window).width() < mediumScreenSize) {
             $navMenuCont.css("visibility", "hidden");
         } else {
             $navMenuCont.animate({'right': '-=250px'}, 250);
         }
         $navMenuCont.attr("aria-expanded", "false");
-        if ($('[id="wrapper"]').attr("expanded-right") === "false" && $(window).width() < 1000) {
+        if ($('[id="wrapper"]').attr("expanded-right") === "false" && $(window).width() < mediumScreenSize && $(window).width() > smallScreenSize) {
             $('[id="wrapper"]').animate({'padding-right': '0px'}, 250);
             $('[id="wrapper"]').attr("expanded-right", "true");
         }
@@ -107,7 +110,7 @@ $('[data-toggle="collapse-slide-right"]').on('click', function () {
             $navMenuCont.animate({'right': '+=250px'}, 250);
             $navMenuCont.attr("aria-expanded", "true");
         }
-        if ($('[id="wrapper"]').attr("expanded-right") === "true" && $(window).width() < 1000) {
+        if ($('[id="wrapper"]').attr("expanded-right") === "true" && $(window).width() < mediumScreenSize && $(window).width() > smallScreenSize) {
             $('[id="wrapper"]').animate({'padding-right': '250px'}, 250);
             $('[id="wrapper"]').attr("expanded-right", "false");
         }
