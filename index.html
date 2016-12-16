@@ -2,7 +2,7 @@
 <html lang="en">
 
     <head>
-        <title>expa.in | Homepage</title>
+        <title>ProjectBigBreakfast | Homepage</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,78 +12,80 @@
 
     <body>
 
-        <nav id="navbar" class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="nav navbar-nav">
-                    <a class="navbar-brand" href="#">untitled</a>
-                </div><!-- /nav -->
-            </div><!-- /container-fluid -->
-        </nav> <!-- /navbar -->
-        
-        <div class="container-fluid">
+        <div id="wrapper">
             
-            <div class="row">
-                
-                <div id="sidebar-left" class="col-md-3">
-                    <div class="sidebar-nav-fixed affix">
-                        <div class="well">
-                            <div id="userprofile">
-                                <p><?php echo $userUsername; ?></p>
-                                <ul class="nav">
-                                    <li>Posts: <?php echo $userUsername; ?></li>
-                                    <li>Likes: <?php echo $userUsername; ?></li>
-                                    <li>Followers: <?php echo $userUsername; ?></li>
-                                    <li>Following: <?php echo $userUsername; ?></li>
-                                </ul>
-                            </div><!-- /userprofile -->
-                            <div id="trendingwords">
-                                <h3>Trending words:</h3>
-                                <ol>
-                                    <li><?php echo $word1; ?></li>
-                                    <li><?php echo $word2; ?></li>
-                                    <li><?php echo $word3; ?></li>
-                                    <li><?php echo $word4; ?></li>
-                                    <li><?php echo $word5; ?></li>
-                                    <li><?php echo $word6; ?></li>
-                                    <li><?php echo $word7; ?></li>
-                                    <li><?php echo $word8; ?></li>
-                                    <li><?php echo $word9; ?></li>
-                                    <li><?php echo $word10; ?></li>
-                                </ol>
-                            </div><!-- /trendingwords -->
-                        </div><!-- /well -->
-                    </div><!-- /sidebar-nav-fixed -->
-                </div><!-- /sidebar-left-->
-                
-                <div id="content" class="col-md-6">
-                    <div class="jumbotron">
-                    </div><!-- /jumbotron -->
-                </div><!--/content-->
-                
-                <div id="sidebar-right" class="col-md-3">
-                    <div class="sidebar-nav-fixed pull-right affix">
-                        <div class="well">
-                            <ul class="nav ">
-                            <div id="previewprofile">
-                                <p><?php echo $previewUsername; ?></p>
-                                <ul class="nav">
-                                    <li>Posts: <?php echo $previewUsername; ?></li>
-                                    <li>Likes: <?php echo $previewUsername; ?></li>
-                                    <li>Followers: <?php echo $previewUsername; ?></li>
-                                    <li>Following: <?php echo $previewUsername; ?></li>
-                                </ul>
-                            </div><!-- /previewprofile -->
-                            <div id="previewposts">
-                                <h3>Posts:</h3>
-                            </div><!-- /previewprofile -->
-                            </ul>
-                        </div><!-- /well -->
-                    </div><!-- /sidebar-nav-fixed -->
-                </div><!-- /sidebar-right-->
-                
-            </div><!-- /row-->
+            <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <div  class="navbar-brand">
+                            <a href="#" class="menu-toggle nav navbar-nav glyphicon glyphicon-align-justify btn-menu toggle" data-toggle="collapse" data-target="#sidebar-left-wrapper" aria-expanded="true" aria-controls="navbar">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                            <a id="title" href="#">ProjectBigBreakfast</a>
+                        </div> <!-- /navbar-brand -->
+                    </div> <!-- /navbar-header -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" class="menu-toggle h4 nav glyphicon glyphicon-align-justify btn-menu toggle" data-toggle="collapse" data-target="#sidebar-right-wrapper" aria-expanded="true" aria-controls="navbar">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!-- /container-fluid -->
+            </nav><!-- /navbar -->
             
-        </div><!--/container-->
+            <div id="sidebar-left-wrapper">
+                <div id="userprofile">
+                    <p><?php echo $userUsername; ?></p>
+                    <ul class="nav">
+                        <li>Posts: <?php echo $userUsername; ?></li>
+                        <li>Likes: <?php echo $userUsername; ?></li>
+                        <li>Followers: <?php echo $userUsername; ?></li>
+                        <li>Following: <?php echo $userUsername; ?></li>
+                    </ul>
+                </div><!-- /userprofile -->
+                <div id="trendingwords">
+                    <h3>Trending words:</h3>
+                    <ol>
+                        <li><?php echo $word1; ?></li>
+                        <li><?php echo $word2; ?></li>
+                        <li><?php echo $word3; ?></li>
+                        <li><?php echo $word4; ?></li>
+                        <li><?php echo $word5; ?></li>
+                        <li><?php echo $word6; ?></li>
+                        <li><?php echo $word7; ?></li>
+                        <li><?php echo $word8; ?></li>
+                        <li><?php echo $word9; ?></li>
+                        <li><?php echo $word10; ?></li>
+                    </ol>
+                </div><!-- /trendingwords -->
+            </div><!-- /sidebar-left-wrapper -->
+            
+            <!-- Page content -->
+            <div id="page-content-wrapper">
+                <div class="page-content">
+                    <div class="container-fluid">
+                        <!-- MAIN CONTENT -->
+                    </div><!-- /container-fluid -->
+                </div> <!-- page-content -->
+            </div><!-- /page-content-wrapper -->
+            
+            <div id="sidebar-right-wrapper">
+                <div id="previewprofile">
+                    <p><?php echo $previewUsername; ?></p>
+                    <ul class="nav">
+                        <li>Posts: <?php echo $previewUsername; ?></li>
+                        <li>Likes: <?php echo $previewUsername; ?></li>
+                        <li>Followers: <?php echo $previewUsername; ?></li>
+                        <li>Following: <?php echo $previewUsername; ?></li>
+                    </ul>
+                </div><!-- /previewprofile -->
+                <div id="previewposts">
+                    <h3>Posts:</h3>
+                </div><!-- /previewprofile -->
+            </div><!-- /sidebar-left-wrapper -->
+            
+        </div><!-- /wrapper -->
         
         <!-- LOGIN MODAL WINDOW -->
         <div id="login_window" class="modal fade">
@@ -111,6 +113,7 @@
         
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://use.fontawesome.com/e0490efbcf.js"></script>
         <script src="js/bootstrap.min.js"></script>
 
     </body>
