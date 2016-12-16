@@ -17,8 +17,13 @@ $('[data-toggle="collapse-slide-right"]').on('click', function() {
         $navMenuCont.animate({'right': '-=250px'}, 250);
         $navMenuCont.attr("aria-expanded", "false");
     }else{
-        $navMenuCont.animate({'right': '+=250px'}, 250);
-        $navMenuCont.attr("aria-expanded", "true");
+        if($navMenuCont.css("visibility") === "hidden"){
+            $navMenuCont.css("visibility", "visible");
+            $navMenuCont.attr("aria-expanded", "true");
+        }else{
+            $navMenuCont.animate({'right': '+=250px'}, 250);
+            $navMenuCont.attr("aria-expanded", "true");
+        }
     }
 });
 
