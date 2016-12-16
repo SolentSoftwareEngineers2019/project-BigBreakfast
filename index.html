@@ -26,7 +26,7 @@
                     </div> <!-- /navbar-header -->
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#" class="menu-toggle h4 nav glyphicon glyphicon-align-justify btn-menu toggle" data-toggle="collapse-slide-right" data-target="#sidebar-right-wrapper" aria-expanded="true">
+                            <a href="#" class="menu-toggle h4 nav glyphicon glyphicon-align-justify btn-menu toggle" data-toggle="collapse-slide-right" data-target="#sidebar-right-wrapper">
                                 <i class="fa fa-bars"></i>
                             </a>
                         </li>
@@ -34,7 +34,7 @@
                 </div> <!-- /container-fluid -->
             </nav><!-- /navbar -->
             
-            <div id="sidebar-left-wrapper">
+            <div id="sidebar-left-wrapper" aria-expanded="true">
                 <div id="userprofile">
                     <p><?php echo $userUsername; ?></p>
                     <ul class="nav">
@@ -71,7 +71,7 @@
                 </div> <!-- page-content -->
             </div><!-- /page-content-wrapper -->
             
-            <div id="sidebar-right-wrapper">
+            <div id="sidebar-right-wrapper" class="float-right" aria-expanded="true">
                 <div id="previewprofile">
                     <p><?php echo $previewUsername; ?></p>
                     <ul class="nav">

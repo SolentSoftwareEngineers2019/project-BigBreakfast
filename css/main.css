@@ -1,5 +1,6 @@
 #navbar {
     background-color: #dd0000;
+    border-bottom: 1px solid #bb0000;
 }
 
 .navbar-brand a, .navbar-brand a:hover {
@@ -11,14 +12,13 @@
 }
 
 #wrapper {
-  padding-left: 250px;
-  padding-right: 250px;
+    padding-left: 250px;
+    padding-right: 250px;
 }
 
 #sidebar-left-wrapper, #sidebar-right-wrapper {
     background-color: #f0f0f0 !important;
     padding: 15px;
-      transition: all 0.4s ease 0s;
 }
 
 #sidebar-left-wrapper {
@@ -48,8 +48,8 @@
 }
 
 #page-content-wrapper {
-  width: 100%;
-  padding-top: 70px;
+    width: 100%;
+    padding-top: 70px;
 }   
 
 .menu-toggle {
@@ -58,37 +58,4 @@
     padding-right: 15px;
     margin-top: 0;
     display: inline-block;
-}
-
-@media (max-width:1000px) {
-
-    #wrapper {
-      padding-left: 0;
-    }
-
-    #sidebar-left-wrapper {
-      left: 0;
-    }
-
-    #wrapper.active {
-      position: relative;
-      left: 250px;
-    }
-
-    #wrapper.active #sidebar-left-wrapper {
-      left: 250px;
-      width: 250px;
-      transition: all 0.4s ease 0s;
-    }
-
-    #sidebar-right-wrapper {
-      right: 0;
-    }
-
-    #wrapper.active #sidebar-right-wrapper {
-      right: 250px;
-      width: 250px;
-      transition: all 0.4s ease 0s;
-    }
-    
 }
