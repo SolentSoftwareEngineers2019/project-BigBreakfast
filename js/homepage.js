@@ -5,8 +5,11 @@ $(window).on('load', function () {
     'use strict';
     if ($(window).width() < 1000) {
         if ($('[id="sidebar-left-wrapper"]').attr("aria-expanded") === "true") {
-            $('[id="sidebar-left-wrapper"]').animate({'left': '-=250px'}, 250);
+            $('[id="sidebar-left-wrapper"]').animate({'left': '-=250px'}, 0);
             $('[id="sidebar-left-wrapper"]').attr("aria-expanded", "false");
+            $('[id="wrapper"]').animate({ 'padding-left': "0px", 'padding-right': "0px"}, 0);
+            $('[id="wrapper"]').attr("expanded-left", "true");
+            $('[id="wrapper"]').attr("expanded-right", "true");
         }
         if ($('[id="sidebar-right-wrapper"]').attr("aria-expanded") === "true") {
             $('[id="sidebar-right-wrapper"]').css("visibility", "hidden");
@@ -17,6 +20,9 @@ $(window).on('load', function () {
         if ($('[id="sidebar-left-wrapper"]').attr("aria-expanded") === "false") {
             $('[id="sidebar-left-wrapper"]').animate({'left': '250px'});
             $('[id="sidebar-left-wrapper"]').attr("aria-expanded", "true");
+            $('[id="wrapper"]').animate({ 'padding-left': "250px", 'padding-right': "250px"}, 0);
+            $('[id="wrapper"]').attr("expanded-left", "false");
+            $('[id="wrapper"]').attr("expanded-right", "false");
         }
         if ($('[id="sidebar-right-wrapper"]').attr("aria-expanded") === "false") {
             $('[id="sidebar-right-wrapper"]').css("visibility", "visible");
