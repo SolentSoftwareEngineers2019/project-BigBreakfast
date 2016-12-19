@@ -4,8 +4,12 @@
 var smallScreenSize = 750;
 var mediumScreenSize = 1000;
 
-$(window).on('load', function () {
+$(window).load (function () {
     'use strict';
+
+    /*launch login window*/
+    $('[id="login-window"]').modal('show');
+
     if ($(window).width() < mediumScreenSize) {
         if ($('[id="sidebar-left-wrapper"]').attr("aria-expanded") === "true") {
             $('[id="sidebar-left-wrapper"]').animate({'left': '-=250px'}, 0);

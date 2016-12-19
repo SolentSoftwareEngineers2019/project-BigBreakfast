@@ -89,7 +89,7 @@
         </div><!-- /wrapper -->
         
         <!-- LOGIN MODAL WINDOW -->
-        <div id="login_window" class="modal fade">
+        <div id="login-window" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -98,12 +98,12 @@
                     </div><!-- /.modal-header -->
                     <div class="modal-body">
                         <p>Need an account?<button type="button" class="btn btn-default">Register</button></p>
-                        <form id="login-form">
+                        <form id="login-form" action="php/connection.php" method="post">
                             <div class="form-group">
-                                <input class="form-control" type="text" id="username" placeholder="Username">
+                                <input class="form-control" type="text" name="username" placeholder="Username">
                             </div><!-- /.form-group -->
                             <div class="form-group">
-                                <input class="form-control" type="password" id="password" placeholder="Password">
+                                <input class="form-control" type="password" name="password" placeholder="Password">
                             </div><!-- /.form-group -->
                             <input type="submit" class="btn btn-default" value="Log-in">
                             <button type="button" class="btn btn-default right" data-dismiss="modal">Cancel</button>
@@ -122,14 +122,14 @@
                 </div><!--/.modal-header-->
                 <form action="" id="register-form">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="regUsername" placeholder="Username">
-                        <input type="text" class="form-control" id="regFirstName" placeholder="First Name">
-                        <input type="text" class="form-control" id="regLastName" placeholder="Last Name">
-                        <input type="email" class="form-control" id="regEmail" placeholder="Email">
+                        <input type="text" class="form-control" name="username" placeholder="Username">
+                        <input type="text" class="form-control" name="first_name" placeholder="First Name">
+                        <input type="text" class="form-control" name="last_name" placeholder="Last Name">
+                        <input type="email" class="form-control" name="email" placeholder="Email">
                     </div><!--/.form-group-->
                     <div class="form-group">
-                        <input type="password" class="form-control" id="regPassword" placeholder="password">
-                        <input type="password" class="form-control" id="regPasswordRep" placeholder="Repeat Password">
+                        <input type="password" class="form-control" name="password" placeholder="Password">
+                        <input type="password" class="form-control" name="password-repeat" placeholder="Repeat Password">
                     </div><!--/.form-group-->
                     <input type="button" class="btn btn-default" value="Register">
                     <button type="button" class="btn btn-default right" data-dismiss="modal"> Cancel</button>
