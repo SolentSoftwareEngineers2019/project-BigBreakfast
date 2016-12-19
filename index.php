@@ -2,11 +2,11 @@
 <html lang="en">
 
     <head>
-        <title>ProjectBigBreakfast | Homepage</title>
+        <title>ProjectBigBreakfast</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
         <link href="css/main.css" rel="stylesheet">
     </head>
 
@@ -14,6 +14,7 @@
 
         <div id="wrapper" expanded-left="false" expanded-right="false">
             
+            <!--NAVBAR-->
             <nav id="navbar" class="navbar navbar-inverse navbar-fixed-top device-fixed-height">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -29,15 +30,16 @@
                     </div> <!-- /navbar-header -->
                 </div> <!-- /container-fluid -->
             </nav><!-- /navbar -->
-            
+
+            <!--LEFT SIDEBAR-->
             <div id="sidebar-left-wrapper" aria-expanded="true">
                 <div id="userprofile">
                     <p><?php echo $userUsername; ?></p>
                     <ul class="nav">
-                        <li>Posts: <?php echo $userUsername; ?></li>
-                        <li>Likes: <?php echo $userUsername; ?></li>
-                        <li>Followers: <?php echo $userUsername; ?></li>
-                        <li>Following: <?php echo $userUsername; ?></li>
+                        <li>Posts: <?php echo $userPosts; ?></li>
+                        <li>Likes: <?php echo $userLikes; ?></li>
+                        <li>Followers: <?php echo $userFollowers; ?></li>
+                        <li>Following: <?php echo $userFollowing; ?></li>
                     </ul>
                 </div><!-- /userprofile -->
                 <div id="trendingwords">
@@ -57,11 +59,10 @@
                 </div><!-- /trendingwords -->
             </div><!-- /sidebar-left-wrapper -->
             
-            <!-- Page content -->
+            <!--PAGE CONTENT-->
             <div id="page-content-wrapper">
                 <div class="jumbotron">
                     <div class="container-fluid">
-                        <!-- MAIN CONTENT -->
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
@@ -69,14 +70,15 @@
                 </div> <!-- page-content -->
             </div><!-- /page-content-wrapper -->
             
+            <!--RIGHT SIDEBAR-->
             <div id="sidebar-right-wrapper" class="float-right" aria-expanded="true">
                 <div id="previewprofile">
                     <p><?php echo $previewUsername; ?></p>
                     <ul class="nav">
-                        <li>Posts: <?php echo $previewUsername; ?></li>
-                        <li>Likes: <?php echo $previewUsername; ?></li>
-                        <li>Followers: <?php echo $previewUsername; ?></li>
-                        <li>Following: <?php echo $previewUsername; ?></li>
+                        <li>Posts: <?php echo $previewPosts; ?></li>
+                        <li>Likes: <?php echo $previewLikes; ?></li>
+                        <li>Followers: <?php echo $previewFollwers; ?></li>
+                        <li>Following: <?php echo $previewFollowing; ?></li>
                     </ul>
                 </div><!-- /previewprofile -->
                 <div id="previewposts">
@@ -93,27 +95,51 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Log-in</h4>
-                    </div>
+                    </div><!-- /.modal-header -->
                     <div class="modal-body">
-                        <form id="login">
+                        <p>Need an account?<button type="button" class="btn btn-default">Register</button></p>
+                        <form id="login-form">
                             <div class="form-group">
                                 <input class="form-control" type="text" id="username" placeholder="Username">
-                            </div>
+                            </div><!-- /.form-group -->
                             <div class="form-group">
                                 <input class="form-control" type="password" id="password" placeholder="Password">
-                            </div>
+                            </div><!-- /.form-group -->
                             <input type="submit" class="btn btn-default" value="Log-in">
                             <button type="button" class="btn btn-default right" data-dismiss="modal">Cancel</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        </form><!-- /#login-form -->
+                    </div><!-- /.modal-body -->
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-content -->
+        </div><!-- /#login-window -->
         
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!--REGISTRATION MODAL WINDOW-->
+        <div id="registration-window" class="modal fade">
+            <div class="modal-dialogue">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Register</h4>
+                </div><!--/.modal-header-->
+                <form action="" id="register-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="regUsername" placeholder="Username">
+                        <input type="text" class="form-control" id="regFirstName" placeholder="First Name">
+                        <input type="text" class="form-control" id="regLastName" placeholder="Last Name">
+                        <input type="email" class="form-control" id="regEmail" placeholder="Email">
+                    </div><!--/.form-group-->
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="regPassword" placeholder="password">
+                        <input type="password" class="form-control" id="regPasswordRep" placeholder="Repeat Password">
+                    </div><!--/.form-group-->
+                    <input type="button" class="btn btn-default" value="Register">
+                    <button type="button" class="btn btn-default right" data-dismiss="modal"> Cancel</button>
+                </form><!--/#register-form-->
+            </div><!--/.modal-dialogue-->
+        </div><!--/#registration-window-->
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://use.fontawesome.com/e0490efbcf.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap.js"></script>
         <script src="js/homepage.js"></script>
 
     </body>
