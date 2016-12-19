@@ -1,6 +1,24 @@
+body {
+    overflow: scroll;
+}
+
+#wrapper {
+    overflow: scroll;
+    position: absolute;
+}
+
+#jumbotron {
+    position: relative;
+}
+
 #navbar {
     background-color: #dd0000;
     border-bottom: 1px solid #bb0000;
+}
+
+.navbar-header {
+    width: 100%;
+    padding-left: 15px;
 }
 
 .navbar-brand a, .navbar-brand a:hover {
@@ -8,7 +26,7 @@
 }
 
 #title {
-    color: white;
+    color: #ffffff;
 }
 
 #wrapper {
@@ -17,8 +35,13 @@
 }
 
 #sidebar-left-wrapper, #sidebar-right-wrapper {
-    background-color: #f0f0f0 !important;
+    background-color: #f0f0f0;
     padding: 15px;
+}
+
+.jumbotron {
+    background-color: #ffffff;
+    padding-top: 0px;
 }
 
 #sidebar-left-wrapper {
@@ -26,7 +49,6 @@
     top: 51px;
     left: 250px;
     width: 250px;
-    background: #000;
     position: fixed;
     height: 100%;
     overflow-y: auto;
@@ -39,7 +61,6 @@
     top: 51px;
     right: 250px;
     width: 250px;
-    background: #000;
     position: fixed;
     height: 100%;
     overflow-y: auto;
@@ -58,4 +79,20 @@
     padding-right: 15px;
     margin-top: 0;
     display: inline-block;
+}
+
+.navbar-collapse.collapse {
+  display: block!important;
+}
+
+.navbar-nav>li, .navbar-nav {
+  float: left !important;
+}
+
+.navbar-nav.navbar-right:last-child {
+  margin-right: -15px !important;
+}
+
+.navbar-right {
+  float: right!important;
 }
