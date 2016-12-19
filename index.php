@@ -36,10 +36,10 @@
                 <div id="userprofile">
                     <p><?php echo $userUsername; ?></p>
                     <ul class="nav">
-                        <li>Posts: <?php echo $userUsername; ?></li>
-                        <li>Likes: <?php echo $userUsername; ?></li>
-                        <li>Followers: <?php echo $userUsername; ?></li>
-                        <li>Following: <?php echo $userUsername; ?></li>
+                        <li>Posts: <?php echo $userPosts; ?></li>
+                        <li>Likes: <?php echo $userLikes; ?></li>
+                        <li>Followers: <?php echo $userFollowers; ?></li>
+                        <li>Following: <?php echo $userFollowing; ?></li>
                     </ul>
                 </div><!-- /userprofile -->
                 <div id="trendingwords">
@@ -75,10 +75,10 @@
                 <div id="previewprofile">
                     <p><?php echo $previewUsername; ?></p>
                     <ul class="nav">
-                        <li>Posts: <?php echo $previewUsername; ?></li>
-                        <li>Likes: <?php echo $previewUsername; ?></li>
-                        <li>Followers: <?php echo $previewUsername; ?></li>
-                        <li>Following: <?php echo $previewUsername; ?></li>
+                        <li>Posts: <?php echo $previewPosts; ?></li>
+                        <li>Likes: <?php echo $previewLikes; ?></li>
+                        <li>Followers: <?php echo $previewFollwers; ?></li>
+                        <li>Following: <?php echo $previewFollowing; ?></li>
                     </ul>
                 </div><!-- /previewprofile -->
                 <div id="previewposts">
