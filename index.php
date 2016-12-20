@@ -114,6 +114,7 @@
         </div><!-- /#login-window -->
         
         <!--REGISTRATION MODAL WINDOW-->
+        <!--===BUG modal takes up entire width of window===-->
         <div id="registration-window" class="modal fade">
             <div class="modal-dialogue">
                 <div class="modal-content">

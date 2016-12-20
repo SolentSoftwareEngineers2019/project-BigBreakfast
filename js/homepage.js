@@ -114,17 +114,20 @@ $('[data-toggle="collapse-slide-right"]').on('click', function () {
     var $navMenuCont;
     $navMenuCont = $($(this).data('target'));
     if ($navMenuCont.attr("aria-expanded") === "true") {
+        /*===BUG right sidebar does not follow window after animating out===*/
         if ($(window).width() < mediumScreenSize) {
             $navMenuCont.css("visibility", "hidden");
         } else {
             $navMenuCont.animate({'right': '-=250px'}, 250);
         }
+        /*============================*/
         $navMenuCont.attr("aria-expanded", "false");
         if ($('[id="wrapper"]').attr("expanded-right") === "false" && $(window).width() < mediumScreenSize && $(window).width() > smallScreenSize) {
             $('[id="wrapper"]').animate({'padding-right': '0px'}, 250);
             $('[id="wrapper"]').attr("expanded-right", "true");
         }
     } else {
+        /*===BUG refer to previous===*/
         if ($navMenuCont.css("visibility") === "hidden") {
             $navMenuCont.css("visibility", "visible");
             $navMenuCont.attr("aria-expanded", "true");
@@ -132,6 +135,7 @@ $('[data-toggle="collapse-slide-right"]').on('click', function () {
             $navMenuCont.animate({'right': '+=250px'}, 250);
             $navMenuCont.attr("aria-expanded", "true");
         }
+        /*==========================*/
         if ($('[id="wrapper"]').attr("expanded-right") === "true" && $(window).width() < mediumScreenSize && $(window).width() > smallScreenSize) {
             $('[id="wrapper"]').animate({'padding-right': '250px'}, 250);
             $('[id="wrapper"]').attr("expanded-right", "false");
