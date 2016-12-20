@@ -24,7 +24,7 @@ $(window).load (function () {
         }
         /*animation for right sidebar*/
         if ($('[id="sidebar-right-wrapper"]').attr("aria-expanded") === "true") {
-            $('[id="sidebar-right-wrapper"]').css("visibility", "hidden");
+            $('[id="sidebar-right-wrapper"]').animate({'right': '-=250px'}, 0);
             $('[id="sidebar-right-wrapper"]').attr("aria-expanded", "false");
         }
     }
@@ -50,6 +50,10 @@ $(window).load (function () {
 /*do on window resize*/
 $(window).on('resize', function () {
     'use strict';
+
+    /*keeps sidebar position dynamic to width of window*/
+    var windowWidth = $(window).width();
+    $('[id="sidebar-right-wrapper]').css('right', windowWidth + 'px');
 
     /*auto close sidebars if window is too small*/
     if ($(window).width() < mediumScreenSize) {
@@ -114,19 +118,15 @@ $('[data-toggle="collapse-slide-right"]').on('click', function () {
     var $navMenuCont;
     $navMenuCont = $($(this).data('target'));
     if ($navMenuCont.attr("aria-expanded") === "true") {
-        /*===BUG right sidebar does not follow window after animating out===*/
         $navMenuCont.animate({'right': '-=250px'}, 250);
-        /*============================*/
         $navMenuCont.attr("aria-expanded", "false");
         if ($('[id="wrapper"]').attr("expanded-right") === "false" && $(window).width() < mediumScreenSize && $(window).width() > smallScreenSize) {
             $('[id="wrapper"]').animate({'padding-right': '0px'}, 250);
             $('[id="wrapper"]').attr("expanded-right", "true");
         }
     } else {
-        /*===BUG refer to previous===*/
         $navMenuCont.animate({'right': '+=250px'}, 250);
         $navMenuCont.attr("aria-expanded", "true");
-        /*==========================*/
         if ($('[id="wrapper"]').attr("expanded-right") === "true" && $(window).width() < mediumScreenSize && $(window).width() > smallScreenSize) {
             $('[id="wrapper"]').animate({'padding-right': '250px'}, 250);
             $('[id="wrapper"]').attr("expanded-right", "false");
