@@ -115,11 +115,7 @@ $('[data-toggle="collapse-slide-right"]').on('click', function () {
     $navMenuCont = $($(this).data('target'));
     if ($navMenuCont.attr("aria-expanded") === "true") {
         /*===BUG right sidebar does not follow window after animating out===*/
-        if ($(window).width() < mediumScreenSize) {
-            $navMenuCont.css("visibility", "hidden");
-        } else {
-            $navMenuCont.animate({'right': '-=250px'}, 250);
-        }
+        $navMenuCont.animate({'right': '-=250px'}, 250);
         /*============================*/
         $navMenuCont.attr("aria-expanded", "false");
         if ($('[id="wrapper"]').attr("expanded-right") === "false" && $(window).width() < mediumScreenSize && $(window).width() > smallScreenSize) {
@@ -128,13 +124,8 @@ $('[data-toggle="collapse-slide-right"]').on('click', function () {
         }
     } else {
         /*===BUG refer to previous===*/
-        if ($navMenuCont.css("visibility") === "hidden") {
-            $navMenuCont.css("visibility", "visible");
-            $navMenuCont.attr("aria-expanded", "true");
-        } else {
-            $navMenuCont.animate({'right': '+=250px'}, 250);
-            $navMenuCont.attr("aria-expanded", "true");
-        }
+        $navMenuCont.animate({'right': '+=250px'}, 250);
+        $navMenuCont.attr("aria-expanded", "true");
         /*==========================*/
         if ($('[id="wrapper"]').attr("expanded-right") === "true" && $(window).width() < mediumScreenSize && $(window).width() > smallScreenSize) {
             $('[id="wrapper"]').animate({'padding-right': '250px'}, 250);
