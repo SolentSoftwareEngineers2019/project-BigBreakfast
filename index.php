@@ -97,7 +97,7 @@
                         <h4 class="modal-title">Log-in</h4>
                     </div><!-- /.modal-header -->
                     <div class="modal-body">
-                        <p>Need an account?<button type="button" class="btn btn-default">Register</button></p>
+                        <p>Need an account? <button type="button" class="btn btn-default btn-sm" data-dismiss="modal" data-toggle="modal" data-target="#registration-window">Register</button></p>
                         <form id="login-form" action="php/connection.php" method="post">
                             <div class="form-group">
                                 <input class="form-control" type="text" name="username" placeholder="Username">
@@ -116,24 +116,28 @@
         <!--REGISTRATION MODAL WINDOW-->
         <div id="registration-window" class="modal fade">
             <div class="modal-dialogue">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Register</h4>
-                </div><!--/.modal-header-->
-                <form action="" id="register-form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="username" placeholder="Username">
-                        <input type="text" class="form-control" name="first_name" placeholder="First Name">
-                        <input type="text" class="form-control" name="last_name" placeholder="Last Name">
-                        <input type="email" class="form-control" name="email" placeholder="Email">
-                    </div><!--/.form-group-->
-                    <div class="form-group">
-                        <input type="password" class="form-control" name="password" placeholder="Password">
-                        <input type="password" class="form-control" name="password-repeat" placeholder="Repeat Password">
-                    </div><!--/.form-group-->
-                    <input type="button" class="btn btn-default" value="Register">
-                    <button type="button" class="btn btn-default right" data-dismiss="modal"> Cancel</button>
-                </form><!--/#register-form-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Register</h4>
+                    </div><!--/.modal-header-->
+                    <div class="modal-body">
+                        <form action="" id="register-form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="username" placeholder="Username">
+                                <input type="text" class="form-control" name="first_name" placeholder="First Name">
+                                <input type="text" class="form-control" name="last_name" placeholder="Last Name">
+                                <input type="email" class="form-control" name="email" placeholder="Email">
+                            </div><!--/.form-group-->
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="password" placeholder="Password">
+                                <input type="password" class="form-control" name="password-repeat" placeholder="Repeat Password">
+                            </div><!--/.form-group-->
+                            <input type="button" class="btn btn-default" value="Register">
+                            <button type="button" class="btn btn-default right" data-dismiss="modal"> Cancel</button>
+                        </form><!--/#register-form-->
+                    </div><!--/.modal-body-->
+                </div><!--/.modal-content-->
             </div><!--/.modal-dialogue-->
         </div><!--/#registration-window-->
 
