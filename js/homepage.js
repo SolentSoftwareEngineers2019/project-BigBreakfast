@@ -51,10 +51,6 @@ $(window).load (function () {
 $(window).on('resize', function () {
     'use strict';
 
-    /*keeps sidebar position dynamic to width of window*/
-    var windowWidth = $(window).width();
-    $('[id="sidebar-right-wrapper]').css('right', windowWidth + 'px');
-
     /*auto close sidebars if window is too small*/
     if ($(window).width() < mediumScreenSize) {
         /*animation for left sidebar*/
@@ -67,7 +63,11 @@ $(window).on('resize', function () {
         }
         /*animation for right sidebar*/
         if ($('[id="sidebar-right-wrapper"]').attr("aria-expanded") === "true") {
-            $('[id="sidebar-right-wrapper"]').css("visibility", "hidden");
+            /*keeps sidebar position dynamic to width of window*/
+            var windowWidth = $(window).width();
+            $('[id="sidebar-right-wrapper"]').css('right', windowWidth + 'px');
+            
+            $('[id="sidebar-right-wrapper"]').animate({'right': '-=250px'}, 250);
             $('[id="sidebar-right-wrapper"]').attr("aria-expanded", "false");
         }
     }
