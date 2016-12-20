@@ -4,13 +4,17 @@
 var smallScreenSize = 750;
 var mediumScreenSize = 1000;
 
+
+/*do on launch*/
 $(window).load (function () {
     'use strict';
 
     /*launch login window*/
-    $('[id="login-window"]').modal('show');
+    $('[id="login-window"]').modal('toggle');
 
+    /*auto close sidebars if screensize gets too small*/
     if ($(window).width() < mediumScreenSize) {
+        /*animation for left sidebar*/
         if ($('[id="sidebar-left-wrapper"]').attr("aria-expanded") === "true") {
             $('[id="sidebar-left-wrapper"]').animate({'left': '-=250px'}, 0);
             $('[id="sidebar-left-wrapper"]').attr("aria-expanded", "false");
@@ -18,12 +22,16 @@ $(window).load (function () {
             $('[id="wrapper"]').attr("expanded-left", "true");
             $('[id="wrapper"]').attr("expanded-right", "true");
         }
+        /*animation for right sidebar*/
         if ($('[id="sidebar-right-wrapper"]').attr("aria-expanded") === "true") {
             $('[id="sidebar-right-wrapper"]').css("visibility", "hidden");
             $('[id="sidebar-right-wrapper"]').attr("aria-expanded", "false");
         }
     }
+
+    /*auto open sidebars if screensize is big enough*/
     if ($(window).width() >= mediumScreenSize) {
+        /*animation for left sidebar*/
         if ($('[id="sidebar-left-wrapper"]').attr("aria-expanded") === "false") {
             $('[id="sidebar-left-wrapper"]').animate({'left': '250px'});
             $('[id="sidebar-left-wrapper"]').attr("aria-expanded", "true");
@@ -31,6 +39,7 @@ $(window).load (function () {
             $('[id="wrapper"]').attr("expanded-left", "false");
             $('[id="wrapper"]').attr("expanded-right", "false");
         }
+        /*animation for right sidebar*/
         if ($('[id="sidebar-right-wrapper"]').attr("aria-expanded") === "false") {
             $('[id="sidebar-right-wrapper"]').css("visibility", "visible");
             $('[id="sidebar-right-wrapper"]').attr("aria-expanded", "true");
@@ -38,9 +47,13 @@ $(window).load (function () {
     }
 });
 
+/*do on window resize*/
 $(window).on('resize', function () {
     'use strict';
+
+    /*auto close sidebars if window is too small*/
     if ($(window).width() < mediumScreenSize) {
+        /*animation for left sidebar*/
         if ($('[id="sidebar-left-wrapper"]').attr("aria-expanded") === "true") {
             $('[id="sidebar-left-wrapper"]').animate({'left': '-=250px'}, 250);
             $('[id="sidebar-left-wrapper"]').attr("aria-expanded", "false");
@@ -48,12 +61,16 @@ $(window).on('resize', function () {
             $('[id="wrapper"]').attr("expanded-left", "true");
             $('[id="wrapper"]').attr("expanded-right", "true");
         }
+        /*animation for right sidebar*/
         if ($('[id="sidebar-right-wrapper"]').attr("aria-expanded") === "true") {
             $('[id="sidebar-right-wrapper"]').css("visibility", "hidden");
             $('[id="sidebar-right-wrapper"]').attr("aria-expanded", "false");
         }
     }
+
+    /*auto open sidebars if window is big enough*/
     if ($(window).width() >= mediumScreenSize) {
+        /*animation for left sidebar*/
         if ($('[id="sidebar-left-wrapper"]').attr("aria-expanded") === "false") {
             $('[id="sidebar-left-wrapper"]').animate({'left': '250px'});
             $('[id="sidebar-left-wrapper"]').attr("aria-expanded", "true");
@@ -61,6 +78,7 @@ $(window).on('resize', function () {
             $('[id="wrapper"]').attr("expanded-left", "false");
             $('[id="wrapper"]').attr("expanded-right", "false");
         }
+        /*animation for right sidebar*/
         if ($('[id="sidebar-right-wrapper"]').attr("aria-expanded") === "false") {
             $('[id="sidebar-right-wrapper"]').css("visibility", "visible");
             $('[id="sidebar-right-wrapper"]').attr("aria-expanded", "true");
@@ -68,7 +86,7 @@ $(window).on('resize', function () {
     }
 });
 
-// animate slide left
+/*toggle left sidebar*/
 $('[data-toggle="collapse-slide-left"]').on('click', function () {
     'use strict';
     var $navMenuCont;
@@ -90,7 +108,7 @@ $('[data-toggle="collapse-slide-left"]').on('click', function () {
     }
 });
 
-// animate slide right
+/*toggle right sidebar*/
 $('[data-toggle="collapse-slide-right"]').on('click', function () {
     'use strict';
     var $navMenuCont;
