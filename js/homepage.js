@@ -63,10 +63,12 @@ $(window).on('resize', function () {
         }
         /*animation for right sidebar*/
         if ($('[id="sidebar-right-wrapper"]').attr("aria-expanded") === "true") {
+            /*===BUG sidebar doesn't stick to right of window===*/
             /*keeps sidebar position dynamic to width of window*/
             var windowWidth = $(window).width();
             $('[id="sidebar-right-wrapper"]').css('right', windowWidth + 'px');
-            
+            /*===================================================*/
+
             $('[id="sidebar-right-wrapper"]').animate({'right': '-=250px'}, 250);
             $('[id="sidebar-right-wrapper"]').attr("aria-expanded", "false");
         }
@@ -84,7 +86,13 @@ $(window).on('resize', function () {
         }
         /*animation for right sidebar*/
         if ($('[id="sidebar-right-wrapper"]').attr("aria-expanded") === "false") {
-            $('[id="sidebar-right-wrapper"]').css("visibility", "visible");
+            /*===BUG sidebar doesn't stick to right of window===*/
+            /*keeps sidebar position dynamic to width of window*/
+            var windowWidth = $(window).width();
+            $('[id="sidebar-right-wrapper"]').css('right', windowWidth + 'px');
+            /*===================================================*/
+            
+            $('[id="sidebar-right-wrapper"]').animate({'right': '+=250px'}, 250);
             $('[id="sidebar-right-wrapper"]').attr("aria-expanded", "true");
         }
     }
