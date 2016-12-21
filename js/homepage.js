@@ -6,7 +6,7 @@ var mediumScreenSize = 1000;
 
 
 /*do on launch*/
-$(window).load (function () {
+$(window).load(function() {
     'use strict';
 
     /*launch login window*/
@@ -16,15 +16,15 @@ $(window).load (function () {
     if ($(window).width() < mediumScreenSize) {
         /*animation for left sidebar*/
         if ($('[id="sidebar-left-wrapper"]').attr("aria-expanded") === "true") {
-            $('[id="sidebar-left-wrapper"]').animate({'left': '-=250px'}, 0);
+            $('[id="sidebar-left-wrapper"]').animate({ 'left': '-=250px' }, 0);
             $('[id="sidebar-left-wrapper"]').attr("aria-expanded", "false");
-            $('[id="wrapper"]').animate({ 'padding-left': "0px", 'padding-right': "0px"}, 0);
+            $('[id="wrapper"]').animate({ 'padding-left': "0px", 'padding-right': "0px" }, 0);
             $('[id="wrapper"]').attr("expanded-left", "true");
             $('[id="wrapper"]').attr("expanded-right", "true");
         }
         /*animation for right sidebar*/
         if ($('[id="sidebar-right-wrapper"]').attr("aria-expanded") === "true") {
-            $('[id="sidebar-right-wrapper"]').animate({'right': '-=250px'}, 0);
+            $('[id="sidebar-right-wrapper"]').animate({ 'right': '-=250px' }, 0);
             $('[id="sidebar-right-wrapper"]').attr("aria-expanded", "false");
         }
     }
@@ -33,31 +33,31 @@ $(window).load (function () {
     if ($(window).width() >= mediumScreenSize) {
         /*animation for left sidebar*/
         if ($('[id="sidebar-left-wrapper"]').attr("aria-expanded") === "false") {
-            $('[id="sidebar-left-wrapper"]').animate({'left': '250px'});
+            $('[id="sidebar-left-wrapper"]').animate({ 'left': '250px' });
             $('[id="sidebar-left-wrapper"]').attr("aria-expanded", "true");
-            $('[id="wrapper"]').animate({ 'padding-left': "250px", 'padding-right': "250px"}, 0);
+            $('[id="wrapper"]').animate({ 'padding-left': "250px", 'padding-right': "250px" }, 0);
             $('[id="wrapper"]').attr("expanded-left", "false");
             $('[id="wrapper"]').attr("expanded-right", "false");
         }
         /*animation for right sidebar*/
         if ($('[id="sidebar-right-wrapper"]').attr("aria-expanded") === "false") {
-            $('[id="sidebar-right-wrapper"]').css("visibility", "visible");
+            $('[id="sidebar-right-wrapper"]').animate({ 'right': '+=250px' }, 0);
             $('[id="sidebar-right-wrapper"]').attr("aria-expanded", "true");
         }
     }
 });
 
 /*do on window resize*/
-$(window).on('resize', function () {
+$(window).on('resize', function() {
     'use strict';
 
     /*auto close sidebars if window is too small*/
     if ($(window).width() < mediumScreenSize) {
         /*animation for left sidebar*/
         if ($('[id="sidebar-left-wrapper"]').attr("aria-expanded") === "true") {
-            $('[id="sidebar-left-wrapper"]').animate({'left': '-=250px'}, 250);
+            $('[id="sidebar-left-wrapper"]').animate({ 'left': '-=250px' }, 250);
             $('[id="sidebar-left-wrapper"]').attr("aria-expanded", "false");
-            $('[id="wrapper"]').animate({ 'padding-left': "0px", 'padding-right': "0px"}, 250);
+            $('[id="wrapper"]').animate({ 'padding-left': "0px", 'padding-right': "0px" }, 250);
             $('[id="wrapper"]').attr("expanded-left", "true");
             $('[id="wrapper"]').attr("expanded-right", "true");
         }
@@ -69,7 +69,7 @@ $(window).on('resize', function () {
             $('[id="sidebar-right-wrapper"]').css('right', windowWidth + 'px');
             /*===================================================*/
 
-            $('[id="sidebar-right-wrapper"]').animate({'right': '-=250px'}, 250);
+            $('[id="sidebar-right-wrapper"]').animate({ 'right': '-=250px' }, 250);
             $('[id="sidebar-right-wrapper"]').attr("aria-expanded", "false");
         }
     }
@@ -78,9 +78,9 @@ $(window).on('resize', function () {
     if ($(window).width() >= mediumScreenSize) {
         /*animation for left sidebar*/
         if ($('[id="sidebar-left-wrapper"]').attr("aria-expanded") === "false") {
-            $('[id="sidebar-left-wrapper"]').animate({'left': '250px'});
+            $('[id="sidebar-left-wrapper"]').animate({ 'left': '250px' });
             $('[id="sidebar-left-wrapper"]').attr("aria-expanded", "true");
-            $('[id="wrapper"]').animate({ 'padding-left': "250px", 'padding-right': "250px"}, 250);
+            $('[id="wrapper"]').animate({ 'padding-left': "250px", 'padding-right': "250px" }, 250);
             $('[id="wrapper"]').attr("expanded-left", "false");
             $('[id="wrapper"]').attr("expanded-right", "false");
         }
@@ -91,52 +91,52 @@ $(window).on('resize', function () {
             var windowWidth = $(window).width();
             $('[id="sidebar-right-wrapper"]').css('right', windowWidth + 'px');
             /*===================================================*/
-            
-            $('[id="sidebar-right-wrapper"]').animate({'right': '+=250px'}, 250);
+
+            $('[id="sidebar-right-wrapper"]').animate({ 'right': '+=250px' }, 250);
             $('[id="sidebar-right-wrapper"]').attr("aria-expanded", "true");
         }
     }
 });
 
 /*toggle left sidebar*/
-$('[data-toggle="collapse-slide-left"]').on('click', function () {
+$('[data-toggle="collapse-slide-left"]').on('click', function() {
     'use strict';
     var $navMenuCont;
     $navMenuCont = $($(this).data('target'));
     if ($navMenuCont.attr("aria-expanded") === "true") {
-        $navMenuCont.animate({'left': '-=250px'}, 250);
+        $navMenuCont.animate({ 'left': '-=250px' }, 250);
         $navMenuCont.attr("aria-expanded", "false");
         if ($('[id="wrapper"]').attr("expanded-left") === "false" && $(window).width() < mediumScreenSize && $(window).width() > smallScreenSize) {
-            $('[id="wrapper"]').animate({'padding-left': '0px'}, 250);
+            $('[id="wrapper"]').animate({ 'padding-left': '0px' }, 250);
             $('[id="wrapper"]').attr("expanded-left", "true");
         }
     } else {
-        $navMenuCont.animate({'left': '+=250px'}, 250);
+        $navMenuCont.animate({ 'left': '+=250px' }, 250);
         $navMenuCont.attr("aria-expanded", "true");
         if ($('[id="wrapper"]').attr("expanded-left") === "true" && $(window).width() < mediumScreenSize && $(window).width() > smallScreenSize) {
-            $('[id="wrapper"]').animate({'padding-left': '250px'}, 250);
+            $('[id="wrapper"]').animate({ 'padding-left': '250px' }, 250);
             $('[id="wrapper"]').attr("expanded-left", "false");
         }
     }
 });
 
 /*toggle right sidebar*/
-$('[data-toggle="collapse-slide-right"]').on('click', function () {
+$('[data-toggle="collapse-slide-right"]').on('click', function() {
     'use strict';
     var $navMenuCont;
     $navMenuCont = $($(this).data('target'));
     if ($navMenuCont.attr("aria-expanded") === "true") {
-        $navMenuCont.animate({'right': '-=250px'}, 250);
+        $navMenuCont.animate({ 'right': '-=250px' }, 250);
         $navMenuCont.attr("aria-expanded", "false");
         if ($('[id="wrapper"]').attr("expanded-right") === "false" && $(window).width() < mediumScreenSize && $(window).width() > smallScreenSize) {
-            $('[id="wrapper"]').animate({'padding-right': '0px'}, 250);
+            $('[id="wrapper"]').animate({ 'padding-right': '0px' }, 250);
             $('[id="wrapper"]').attr("expanded-right", "true");
         }
     } else {
-        $navMenuCont.animate({'right': '+=250px'}, 250);
+        $navMenuCont.animate({ 'right': '+=250px' }, 250);
         $navMenuCont.attr("aria-expanded", "true");
         if ($('[id="wrapper"]').attr("expanded-right") === "true" && $(window).width() < mediumScreenSize && $(window).width() > smallScreenSize) {
-            $('[id="wrapper"]').animate({'padding-right': '250px'}, 250);
+            $('[id="wrapper"]').animate({ 'padding-right': '250px' }, 250);
             $('[id="wrapper"]').attr("expanded-right", "false");
         }
     }
